@@ -9,9 +9,7 @@ import os
 
 #httplib2.debuglevel=4
 
-
 queue = Queue.Queue()
-good_proxies = []
 
 class ThreadProxy(threading.Thread):
     """Threaded proxy checker"""
@@ -55,12 +53,12 @@ class ThreadProxy(threading.Thread):
      
 
 
-with open('untested-proxies/bigproxylist.txt', 'r') as f:
+with open('untested-proxies/proxylist.txt', 'r') as f:
     file_contents = f.read()
 
 proxies = file_contents.split()
-tested_proxies = []
 good_proxies = []
+
 print 'There are %i proxies' % len(proxies)
 
 def main():
